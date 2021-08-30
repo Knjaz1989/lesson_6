@@ -181,4 +181,3 @@ students = [s1, s2]
 lecturers = [l1, l2]
 average_of_students(students, "OOP")
 average_of_lecturers(lecturers, "OOP")
-print("Finished")
