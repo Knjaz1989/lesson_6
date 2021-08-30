@@ -24,27 +24,43 @@ class Student:
         else:
             return 'Ошибка'
 
-    def __eq__(self, other): #Определяет поведение оператора равенства, ==
+    def __eq__(self, other):  # Определяет поведение оператора равенства, ==
+        if not isinstance(other, Student):
+            return "Second person not in Student"
         return self.get_average() == other.get_average()
 
-    def __ne__(self, other): #Определяет поведение оператора неравенства, !=
+    def __ne__(self, other):  # Определяет поведение оператора неравенства, !=
+        if not isinstance(other, Student):
+            return "Second person not in Student"
         return self.get_average() != other.get_average()
 
-    def __lt__(self, other): #Определяет поведение оператора меньше, <
+    def __lt__(self, other):  # Определяет поведение оператора меньше, <
+        if not isinstance(other, Student):
+            return "Second person not in Student"
         return self.get_average() < other.get_average()
 
-    def __gt__(self, other): #Определяет поведение оператора больше, >
+    def __gt__(self, other):  # Определяет поведение оператора больше, >
+        if not isinstance(other, Student):
+            return "Second person not in Student"
         return self.get_average() > other.get_average()
 
-    def __le__(self, other): #Определяет поведение оператора меньше или равно, <=
+    def __le__(self, other):  # Определяет поведение оператора меньше или равно, <=
+        if not isinstance(other, Student):
+            return "Second person not in Student"
         return self.get_average() <= other.get_average()
 
-    def __ge__(self, other): #Определяет поведение оператора больше или равно, >=
+    def __ge__(self, other):  # Определяет поведение оператора больше или равно, >=
+        if not isinstance(other, Student):
+            return "Second person not in Student"
         return self.get_average() >= other.get_average()
 
-
     def __str__(self):
-        return f"Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за домашние задания: {self.get_average()}\nКурсы в процессе обучения: {', '.join(self.courses_in_progress)}\nЗавершенные курсы: {', '.join(self.finished_courses)}"
+        return f"""Имя: {self.name}
+Фамилия: {self.surname}
+Средняя оценка за домашние задания: {self.get_average()}
+Курсы в процессе обучения: {', '.join(self.courses_in_progress)}
+Завершенные курсы: {', '.join(self.finished_courses)}"""
+
 
 class Mentor:
     def __init__(self, name, surname):
@@ -62,22 +78,34 @@ class Lecturer(Mentor):
     def get_average(self):
         return Student.get_average(self)
 
-    def __eq__(self, other): #Определяет поведение оператора равенства, ==
+    def __eq__(self, other):  # Определяет поведение оператора равенства, ==
+        if not isinstance(other, Lecturer):
+            return "Second person not in Lecturer"
         return self.get_average() == other.get_average()
 
-    def __ne__(self, other): #Определяет поведение оператора неравенства, !=
+    def __ne__(self, other):  # Определяет поведение оператора неравенства, !=
+        if not isinstance(other, Lecturer):
+            return "Second person not in Lecturer"
         return self.get_average() != other.get_average()
 
-    def __lt__(self, other): #Определяет поведение оператора меньше, <
+    def __lt__(self, other):  # Определяет поведение оператора меньше, <
+        if not isinstance(other, Lecturer):
+            return "Second person not in Lecturer"
         return self.get_average() < other.get_average()
 
-    def __gt__(self, other): #Определяет поведение оператора больше, >
+    def __gt__(self, other):  # Определяет поведение оператора больше, >
+        if not isinstance(other, Lecturer):
+            return "Second person not in Lecturer"
         return self.get_average() > other.get_average()
 
-    def __le__(self, other): #Определяет поведение оператора меньше или равно, <=
+    def __le__(self, other):  # Определяет поведение оператора меньше или равно, <=
+        if not isinstance(other, Lecturer):
+            return "Second person not in Lecturer"
         return self.get_average() <= other.get_average()
 
-    def __ge__(self, other): #Определяет поведение оператора больше или равно, >=
+    def __ge__(self, other):  # Определяет поведение оператора больше или равно, >=
+        if not isinstance(other, Lecturer):
+            return "Second person not in Lecturer"
         return self.get_average() >= other.get_average()
 
 class Reviewer(Mentor):
